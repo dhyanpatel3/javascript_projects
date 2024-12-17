@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Geometric Calculator</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7fa;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #4a90e2;
+      text-align: center;
+    }
+
+    .shapes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 10px;
+    }
+
+    .shape {
+      background: #f9f9f9;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .shape:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 5px;
+      font-size: 0.9rem;
+      background: #fff;
+      box-sizing: border-box;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #4a90e2;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3b79c4;
+    }
+
+    div[id$="-result"] {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #4a90e2;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      button {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>3D Geometric Calculator</h1>
+
+    <div class="shapes-grid">
+      <!-- Cube -->
+      <div class="shape">
+        <h2>Cube</h2>
+        <label>Side Length: <input type="number" id="cube-side"></label>
+        <button onclick="calculateCube()">Calculate</button>
+        <div id="cube-result"></div>
+      </div>
+
+      <!-- Sphere -->
+      <div class="shape">
+        <h2>Sphere</h2>
+        <label>Radius: <input type="number" id="sphere-radius"></label>
+        <button onclick="calculateSphere()">Calculate</button>
+        <div id="sphere-result"></div>
+      </div>
+
+      <!-- Rectangular Prism -->
+      <div class="shape">
+        <h2>Rectangular Prism</h2>
+        <label>Length: <input type="number" id="prism-length"></label>
+        <label>Width: <input type="number" id="prism-width"></label>
+        <label>Height: <input type="number" id="prism-height"></label>
+        <button onclick="calculatePrism()">Calculate</button>
+        <div id="prism-result"></div>
+      </div>
+
+      <!-- Pyramid -->
+      <div class="shape">
+        <h2>Pyramid</h2>
+        <label>Base Length: <input type="number" id="pyramid-base"></label>
+        <label>Height: <input type="number" id="pyramid-height"></label>
+        <button onclick="calculatePyramid()">Calculate</button>
+        <div id="pyramid-result"></div>
+      </div>
+
+      <!-- Tetrahedron -->
+      <div class="shape">
+        <h2>Tetrahedron</h2>
+        <label>Edge Length: <input type="number" id="tetra-edge"></label>
+        <button onclick="calculateTetrahedron()">Calculate</button>
+        <div id="tetra-result"></div>
+      </div>
+
+      <!-- Torus -->
+      <div class="shape">
+        <h2>Torus</h2>
+        <label>Major Radius (R): <input type="number" id="torus-major"></label>
+        <label>Minor Radius (r): <input type="number" id="torus-minor"></label>
+        <button onclick="calculateTorus()">Calculate</button>
+        <div id="torus-result"></div>
+      </div>
+
+      <!-- Cylinder -->
+      <div class="shape">
+        <h2>Cylinder</h2>
+        <label>Radius: <input type="number" id="cylinder-radius"></label>
+        <label>Height: <input type="number" id="cylinder-height"></label>
+        <button onclick="calculateCylinder()">Calculate</button>
+        <div id="cylinder-result"></div>
+      </div>
+
+      <!-- Cone -->
+      <div class="shape">
+        <h2>Cone</h2>
+        <label>Radius: <input type="number" id="cone-radius"></label>
+        <label>Height: <input type="number" id="cone-height"></label>
+        <button onclick="calculateCone()">Calculate</button>
+        <div id="cone-result"></div>
+      </div>
+
+      <!-- Hemisphere -->
+      <div class="shape">
+        <h2>Hemisphere</h2>
+        <label>Radius: <input type="number" id="hemisphere-radius"></label>
+        <button onclick="calculateHemisphere()">Calculate</button>
+        <div id="hemisphere-result"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="calculator.js"></script>
+</body>
+</html>

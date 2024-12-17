@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f3f4f6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .counter-container {
+      margin: 100px auto;
+      width: 300px;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    #counter {
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 20px 0;
+      color: #333;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    button:active {
+      background-color: #003f7f;
+    }
+  </style>
+</head>
+<body>
+  <div class="counter-container">
+    <h1>Counter</h1>
+    <div id="counter">0</div>
+    <div class="button-container">
+      <button id="add">Add</button>
+      <button id="remove">Remove</button>
+      <button id="reset">Reset</button>
+    </div>
+  </div>
+  <script src="counter.js">
+    // Select elem
+  </script>
+</body>
+</html>
