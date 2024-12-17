@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #eef2f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        h1 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #555555;
+            text-align: left;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #333333;
+        }
+        #thankYouMessage {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #28a745;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1 id="myH1">Feedback Form</h1>
+
+        <!-- Input Fields -->
+        <label for="myName">Name:</label>
+        <input type="text" id="myName" placeholder="Enter your name">
+
+        <label for="myEmail">Email:</label>
+        <input type="email" id="myEmail" placeholder="Enter your email">
+
+        <label for="myDOB">Date of Birth:</label>
+        <input type="date" id="myDOB">
+
+        <label for="myDivision">Division:</label>
+        <select id="myDivision">
+            <option value="" disabled selected>Select your division</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+        </select>
+
+        <label for="myEnroll">Enroll Number:</label>
+        <input type="text" id="myEnroll" placeholder="Enter enroll number">
+
+        <label for="myCity">City:</label>
+        <input type="text" id="myCity" placeholder="Enter your city">
+
+        <!-- Submit Button -->
+        <button type="submit" id="mybutton">Submit</button>
+
+        <!-- Thank You Message -->
+        <p id="thankYouMessage">Thank you for submitting your details!</p>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
