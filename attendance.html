@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Student Attendance System</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.js"></script>
+    <script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #1e1e2f;
+            color: #fff;
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        video {
+            width: 640px;
+            height: 480px;
+            border: 2px solid #6c63ff;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #6c63ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #8b80ff;
+        }
+
+        #myResult {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        #attendanceList {
+            margin-top: 30px;
+            color: #fff;
+            font-size: 16px;
+            text-align: left;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        #attendanceList ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #attendanceList li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Attendance System</h1>
+
+    <!-- Video Feed -->
+    <div class="video-container">
+        <video id="webcam" autoplay playsinline></video>
+    </div>
+
+    <!-- Action Buttons -->
+    <button id="captureButton">Capture & Classify</button>
+
+    <!-- Result Display -->
+    <div id="myResult">Waiting for capture...</div>
+
+    <!-- Attendance List -->
+    <div id="attendanceList">
+        <h2>Attendance</h2>
+        <ul id="studentList"></ul>
+    </div>
+
+    <script src="attendance.js"></script>
+</body>
+</html>
